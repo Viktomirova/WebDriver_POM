@@ -1,14 +1,13 @@
 ﻿using OpenQA.Selenium;
-
 using System;
 
-namespace WebDriver_POM.Pages
+namespace WebDriver_POM.Interfaces
 {
-    public class BasePage
+    public class IHomePage
     {
         protected readonly IWebDriver driver;
 
-        public BasePage(IWebDriver driver)
+        public IHomePage(IWebDriver driver)
         {
             this.driver = driver;
             driver.Manage().Window.Maximize();
@@ -49,6 +48,5 @@ namespace WebDriver_POM.Pages
         {
             return driver.Title;
         }
-
     }
 }

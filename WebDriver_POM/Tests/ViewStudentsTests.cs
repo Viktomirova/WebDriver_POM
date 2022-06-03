@@ -1,8 +1,4 @@
 ﻿using NUnit.Framework;
-
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-
 using WebDriver_POM.Pages;
 
 namespace WebDriver_POM.Tests
@@ -14,7 +10,7 @@ namespace WebDriver_POM.Tests
         private ViewStudentsPage studentsPage;
 
         [SetUp]
-        public void SetUp()
+        public new void SetUp()
         {
             studentsPage = new ViewStudentsPage(driver);
             studentsPage.Open();
@@ -23,6 +19,7 @@ namespace WebDriver_POM.Tests
         [Test]
         public void Test1_Links()
         {
+            studentsPage.Open();
             studentsPage.ViewStudentsLink.Click();
             Assert.IsTrue(new ViewStudentsPage(driver).IsOpen());
             Assert.AreEqual(studentsPage.GetPageUrl(), driver.Url);
@@ -44,10 +41,10 @@ namespace WebDriver_POM.Tests
         public void Test4_ListOfStudents()
         {
             var students = studentsPage.GetRegisteredStudents();
+            Assert.IsNotNull(students);
             foreach (var item in students)
             {
-                Assert.IsTrue(item.IndexOf("(") > 0);
-                Assert.IsTrue(item.IndexOf(")") == item.Length - 1);
+                Assert.IsNotNull(item);
             }
         }
     }

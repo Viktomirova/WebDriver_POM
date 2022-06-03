@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
-using WebDriver_POM.Pages;
+using OpenQA.Selenium.Chrome;
 
 namespace WebDriver_POM.Tests
 {

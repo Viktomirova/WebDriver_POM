@@ -1,34 +1,25 @@
 ﻿using NUnit.Framework;
-
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 using WebDriver_POM.Pages;
 
 namespace WebDriver_POM.Tests
 {
-    public class AddStudentTests
+    public class AddStudentTests : BaseTests
     {
-        private IWebDriver driver;
         private AddStudentPage page;
 
         [SetUp]
-        public void SetUp()
+        public new void SetUp()
         {
-            this.driver = new ChromeDriver();
             this.page = new AddStudentPage(driver);
             page.Open();
-        }
-
-        [TearDown]
-        public void ShutDown()
-        {
-            driver.Quit();
         }
 
         [Test]
         public void Test1_Links()
         {
+            page.Open();
             Assert.AreEqual(page.GetPageUrl(), driver.Url);
             Assert.That(driver.FindElements(By.CssSelector("body > ul")), Is.Not.Null);
         }

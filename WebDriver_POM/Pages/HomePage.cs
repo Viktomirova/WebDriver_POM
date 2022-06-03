@@ -1,10 +1,11 @@
 ﻿using OpenQA.Selenium;
+using WebDriver_POM.Interfaces;
 
 namespace WebDriver_POM.Pages
 {
-    public class HomePage : BasePage
+    public class HomePage : IHomePage
     {
-        public HomePage(IWebDriver driver)
+        public HomePage(IWebDriver driver) 
             : base(driver)
         {
         }

@@ -2,7 +2,7 @@
 
 namespace WebDriver_POM.Pages
 {
-    public class AddStudentPage : BasePage
+    public class AddStudentPage : HomePage
     {
 
         public AddStudentPage(IWebDriver driver)

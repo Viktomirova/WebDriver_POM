@@ -1,11 +1,10 @@
 ﻿using OpenQA.Selenium;
-
 using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace WebDriver_POM.Pages
 {
-    public class ViewStudentsPage : BasePage
+    public class ViewStudentsPage : HomePage
     {
         public ViewStudentsPage(IWebDriver driver) 
             : base(driver)
